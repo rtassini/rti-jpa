@@ -9,7 +9,8 @@ import br.com.rti.juridico.model.Conta;
 public class TesteJPA {
 
 	public static void main(String[] args) {
-		
+			double inicio = System.currentTimeMillis();
+
 
 	        EntityManagerFactory entityManagerFactory = Persistence
 	                      .createEntityManagerFactory("rti-jpa-mysql");
@@ -18,7 +19,7 @@ public class TesteJPA {
 
 	        
 	        Conta conta = new Conta();
-	        conta.setTitular("Joao Ferreira");
+	        conta.setTitular("Rodrigo Teste");
 	        conta.setBanco("HSBC");
 	        conta.setNumero("123345");
 	        conta.setAgencia("321");
@@ -30,6 +31,10 @@ public class TesteJPA {
 	        manager.getTransaction().commit();
 	        
 	        manager.close();
+	        
+	        double fim = System.currentTimeMillis();
+	        System.out.println("Executado em: " + (fim - inicio)/1000 + "s");
+	   
 	    
 	}
 }

@@ -1,0 +1,12 @@
+Status entitys JPA
+
+Managed - Sempre sincronizado com o BD
+	|______ Uma Entity permaçe Transient enquanto a transação do EntityManagaer estiver aberta
+	|______ método Find --> Sempre retorna um objeto managed
+	|______ método Remove --> Só é possível remover uma Entity com status Managed
+	
+Transient -
+	|______ método Persist --> Para transformar no estado Managed
+
+Detached -
+	|______ método Merge --> Para transformar no estado Managed
